@@ -31,7 +31,7 @@ services:
         depends_on:
             - elastic
         ports:
-            - 127.0.0.1:5044:5044
+            - 5044:5044
             - 127.0.0.1:9600:9600
         environment:
             LS_JAVA_OPTS: "-Xmx256m -Xms256m"
@@ -47,7 +47,7 @@ services:
         depends_on:
             - elastic
         ports:
-            - 127.0.0.1:5601:5601
+            - 5601:5601
         volumes:
             - ./config/kibana.yaml:/usr/share/kibana/config/kibana.yml:ro
         <<: *logging
